@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">MadaMal</string>
+    <string name="header_image">header</string>
+    <string name="login_page">התחברות</string>
+    <string name="register_page">הרשמה</string>
+    <string name="email">מייל</string>
+    <string name="full_name">שם מלא</string>
+    <string name="profile_pic">תמונת פרופיל</string>
+    <string name="password">סיסמא</string>
+    <string name="login">התחבר</string>
+    <string name="register">הרשם</string>
+    <string name="for_sign_up_click_here">להרשמה לחץ כאן</string>
+    <string name="for_sign_in_click_here">נרשמת בעבר? לחץ כאן כדי להתחבר</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">בית</string>
+    <string name="title_user_reports_list">הדיווחים שלי</string>
+    <string name="title_reports_map">מפת הדיווחים</string>
+    <string name="title_user_profile">הפרופיל שלי</string>
+    <string name="title_edit_user_profile_dialog">ערוך פרופיל</string>
+    <string name="title_edit_report_dialog">ערוך דיווח</string>
+    <string name="title_add_report_dialog">הוסף דיווח</string>
+    <string name="edit_user_profile_dialog_button">שמור שינויים</string>
+    <string name="open_edit_report_window">open edit report window</string>
+    <string name="open_delete_report_window">open delete report window</string>
+    <string name="report_list_item_display_image">report list item display image</string>
+    <string name="palceholder_date">palceholder date</string>
+    <string name="palceholder_title">חסרה כותרת לדיווח</string>
+    <string name="google_map_api_key">AIzaSyB8PT0FJsLc4UmG7bD3BC0I3YUbgOwWr9I</string>
+    <string name="report_data_input">פרטי הדיווח</string>
+    <string name="report_title_input">כותרת הדיווח</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logout">התנתק</string>
+    <string name="add_image_text">בחר תמונה להעלאה</string>
+    <string name="noReportText">לא נמצאו דיווחים מתאימים</string>
+    <string name="noWeather">שגיאה בקבלת מזג אוויר</string>
+    <string name="currentWeather">מזג האוויר הוא</string>
+
+</resources>
