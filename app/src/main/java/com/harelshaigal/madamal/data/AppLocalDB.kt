@@ -3,7 +3,7 @@ package com.harelshaigal.madamal.data
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.harelshaigal.madamal.application.MadamalApplication
+import com.harelshaigal.madamal.application.AroundTwApplication
 import com.harelshaigal.madamal.data.report.Report
 import com.harelshaigal.madamal.data.report.ReportDao
 import com.harelshaigal.madamal.data.user.User
@@ -19,7 +19,7 @@ abstract class AppLocalDbRepository : RoomDatabase() {
 
 object AppLocalDb {
     var db = Room.databaseBuilder(
-        MadamalApplication.context,
+        AroundTwApplication.context,
         AppLocalDbRepository::class.java,
         "dbFileName.db"
     )

@@ -10,7 +10,7 @@
 
 
     <application
-        android:name=".application.AroundTwApplication"
+        android:name="com.harelshaigal.madamal.application.AroundTwApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -24,7 +24,7 @@
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
-             To get one, follow the directions here:
+             To get one, com.harelshaigal.aroundtw
 
                 https://developers.google.com/maps/documentation/android-sdk/get-api-key
 

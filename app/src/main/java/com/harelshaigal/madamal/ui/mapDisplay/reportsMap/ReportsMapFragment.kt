@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.ui.mapDisplay.reportsMap
+package com.harelshaigal.AroundTwApplication.ui.mapDisplay.reportsMap
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,6 +17,7 @@ import com.harelshaigal.madamal.data.report.Report
 import com.harelshaigal.madamal.databinding.FragmentReportsMapBinding
 import com.harelshaigal.madamal.helpers.LocationHelper
 import com.harelshaigal.madamal.ui.mapDisplay.reportMapDisplay.ReportMapDisplayFragment
+import com.harelshaigal.madamal.ui.mapDisplay.reportsMap.ReportsMapViewModel
 
 class ReportsMapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
