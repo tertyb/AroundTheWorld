@@ -14,6 +14,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MadaMal"
+rootProject.name = "aroundtheworld"
 include(":app")
  
