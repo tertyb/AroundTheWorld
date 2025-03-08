@@ -11,7 +11,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.harelshaigal.aroundtheworld"
+        applicationId = "com.harelshaigal.aroundtw"
         minSdk = 21
         targetSdk = 34
         versionCode = 1

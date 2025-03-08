@@ -1,4 +1,4 @@
-package com.harelshaigal.aroundtheworld
+package com.harelshaigal.aroundtw
 
 import org.junit.Test
 

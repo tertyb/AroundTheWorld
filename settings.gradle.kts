@@ -14,6 +14,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "aroundtheworld"
+rootProject.name = "aroundtw"
 include(":app")
  
