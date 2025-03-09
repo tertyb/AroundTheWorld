@@ -1,4 +1,4 @@
-package com.harelshaigal.AroundTwApplication.ui.mapDisplay.reportsMap
+package com.harelshaigal.madamal.ui.mapDisplay.reportsMap
 
 import android.os.Bundle
 import android.view.LayoutInflater
