@@ -22,9 +22,7 @@ class ReportRepository() {
     private lateinit var reportsRegistration: ListenerRegistration
 
     fun getAllReports(userId: String? = null): LiveData<List<Report>> {
-        return if (userId == null) reportDao.getAllReports() else reportDao.getReportsByUserId(
-            userId
-        )
+        return reportDao.getAllReports()
     }
 
     fun startReportsFetching() {
