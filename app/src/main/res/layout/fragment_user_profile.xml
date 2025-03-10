@@ -6,143 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".ui.userDispaly.userProfile.UserProfileFragment">
 
+    <!-- Profile Picture -->
     <ImageView
-        android:id="@+id/userProfile_headerImageView"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:contentDescription="@string/header_image"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/header" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/userDataLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:id="@+id/userProfile_profileImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@id/editUserButton"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/profile_pic"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userProfile_headerImageView">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailDisplayLayout"
-            style="@style/Widget.Material3.TextInputLayout.FilledBox"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/email"
-            app:boxStrokeWidth="2dp"
-            app:boxStrokeWidthFocused="2dp"
-            app:endIconMode="none"
-            app:hintEnabled="true"
-            app:layout_constraintBottom_toTopOf="@+id/fullNameDisplayLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/userProfile_emailText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:enabled="false"
-                android:inputType="none"
-                android:paddingBottom="8dp"
-                android:text="@string/email"
-                android:textColor="@color/black" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/profile"
+        />
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/fullNameDisplayLayout"
-            style="@style/Widget.Material3.TextInputLayout.FilledBox"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginBottom="15dp"
-            android:hint="@string/full_name"
-            app:boxStrokeWidth="2dp"
-            app:boxStrokeWidthFocused="2dp"
-            app:endIconMode="none"
-            app:hintEnabled="true"
-            app:layout_constraintBottom_toTopOf="@+id/Image_Button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailDisplayLayout">
+    <!-- User Name -->
+    <TextView
+        android:id="@+id/userProfile_fullNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="John Doe"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/userProfile_profileImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/userProfile_fullNameText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:enabled="true"
-                android:inputType="none"
-                android:text="@string/full_name"
-                android:textColor="@color/black" />
+    <!-- User Stats -->
+    <LinearLayout
+        android:id="@+id/userStatsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/userProfile_fullNameText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/Image_Button"
-            style="@style/Widget.Material3.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/add_image_text"
-            app:backgroundTint="#1F7D53"
-            app:layout_constraintBottom_toTopOf="@id/userProfile_profileImageView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fullNameDisplayLayout" />
-
-        <ImageView
-            android:id="@+id/userProfile_profileImageView"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="@string/profile_pic"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Image_Button" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <ProgressBar
-            android:id="@+id/register_progressBar"
+        <TextView
+            android:id="@+id/userProfile_postsCount"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/userDataLayout"
-            tools:ignore="MissingConstraints" />
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="5 posts"
+            android:textAlignment="center" />
+    </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/editUserButton"
-            style="@style/Widget.Material3.Button"
-            android:layout_width="200dp"
+    <!-- Image Grid RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userPhotosRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/userStatsLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"/>
+
+    <!-- Location CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/locationCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/userPhotosRecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="#1F7D53"
-            android:text="@string/title_edit_user_profile_dialog"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/userDataLayout"
-            app:layout_constraintVertical_bias="1.0" />
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <fragment
+                android:id="@+id/navigation_reports_map"
+                android:name="com.harelshaigal.madamal.ui.mapDisplay.reportsMap.ReportsMapFragment"
+                android:label="@string/title_reports_map"
+                tools:layout="@layout/fragment_reports_map"  android:layout_height="200dp" android:layout_width="400dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

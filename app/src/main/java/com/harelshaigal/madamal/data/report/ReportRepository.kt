@@ -25,6 +25,10 @@ class ReportRepository() {
         return reportDao.getAllReports()
     }
 
+    fun getReportsByUserId(userId: String? = null): LiveData<List<Report>> {
+        return reportDao.getReportsByUserId(userId ?: "")
+    }
+
     fun startReportsFetching() {
         reportsRegistration =
             reportsCollection.addSnapshotListener { snapshots: QuerySnapshot?, _: FirebaseFirestoreException? ->
