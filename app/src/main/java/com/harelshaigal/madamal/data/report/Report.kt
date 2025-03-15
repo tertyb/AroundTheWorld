@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class Report (
     @PrimaryKey
-    val id: String,
+    var id: String,
     val userId: String,
     val title: String,
     val data: String,
@@ -14,6 +14,10 @@ data class Report (
     val lng: Double?,
     var image: String? = null,
     val lastUpdated: Long? = System.currentTimeMillis()
-)
+) {
+    
+constructor() : this("", "", "", "", null, null, null, null)
+}
+
 
 

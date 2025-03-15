@@ -85,7 +85,7 @@ class ReportsMapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerCli
 
     private fun observeReports() {
         viewModel.reportList.observe(viewLifecycleOwner) { reports ->
-            updateMapMarkers(reports)
+            updateMapMarkers(reports.map { it.report })
         }
     }
 
