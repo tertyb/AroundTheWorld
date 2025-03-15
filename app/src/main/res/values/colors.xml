@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#4CAF50</color>
-    <color name="purple_500">#388E3C</color>
-    <color name="purple_700">#2E7D32</color>
-    <color name="teal_200">#A5D6A7</color>
-    <color name="teal_700">#1B5E20</color>
+    <color name="purple_200">#dbeafe</color>
+    <color name="purple_500">#dbeafe</color>
+    <color name="purple_700">#dbeafe</color>
+    <color name="teal_200">#dbeafe</color>
+    <color name="teal_700">#dbeafe</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary">#388E3C</color>
+    <color name="primary">#dbeafe</color>
     <color name="colorBottomNavigationItemSelected">#4CAF50</color>
     <color name="colorBottomNavigationItemUnselected">#757575</color>
     <color name="light_blue_600">#388E3C</color>
@@ -15,5 +15,7 @@
     <color name="light_blue_A200">#A5D6A7</color>
     <color name="light_blue_A400">#4CAF50</color>
     <color name="black_overlay">#66000000</color>
-
+    <color name="colorPrimary">#1E88E5</color>
+    <color name="colorSecondary">#1565C0</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
 </resources>

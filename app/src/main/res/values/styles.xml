@@ -1,0 +1,23 @@
+<resources>
+    <!-- Your existing styles (like AppTheme) -->
+
+    <!-- ✅ Add this BELOW the others -->
+    <style name="MyPrimaryButton" parent="Widget.Material3.Button">
+        <item name="useMaterialThemeColors">false</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="iconTint">@color/white</item>
+        <item name="cornerRadius">100dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="CustomButtonStyle" parent="Widget.Material3.Button">
+        <item name="useMaterialThemeColors">false</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="iconTint">@color/white</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+</resources>
