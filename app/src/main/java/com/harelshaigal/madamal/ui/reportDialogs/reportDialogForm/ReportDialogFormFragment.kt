@@ -46,6 +46,9 @@ class ReportDialogFormFragment : DialogFragment(), ImagePickerHelper.ImagePicker
     private lateinit var reportBodyTextInput: TextInputLayout
     private lateinit var saveReportButton: Button
 
+    private var onSuccessCallback: (() -> Unit)? = null
+    private var isDataSet = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -91,8 +94,10 @@ class ReportDialogFormFragment : DialogFragment(), ImagePickerHelper.ImagePicker
         super.onStart()
         val dialog = dialog
         if (dialog != null) {
-            if (arguments?.getString("reportId") != null)
+            if (arguments?.getString("reportId") != null && !isDataSet) {
                 setEditData(arguments?.getString("reportId")!!)
+                isDataSet = true
+            }
 
             val width = ViewGroup.LayoutParams.MATCH_PARENT
             val height = ViewGroup.LayoutParams.MATCH_PARENT
@@ -143,9 +148,10 @@ class ReportDialogFormFragment : DialogFragment(), ImagePickerHelper.ImagePicker
     }
 
     companion object {
-        fun display(fragmentManager: FragmentManager?, reportId: String?) {
+        fun display(fragmentManager: FragmentManager?, reportId: String?, onSuccess: (() -> Unit)? = null) {
             if (fragmentManager != null) {
                 val reportDialogFormFragment = ReportDialogFormFragment()
+                reportDialogFormFragment.onSuccessCallback = onSuccess
 
                 if (reportId != null) {
                     val args = Bundle()
@@ -169,6 +175,7 @@ class ReportDialogFormFragment : DialogFragment(), ImagePickerHelper.ImagePicker
             selectedImageUri = it
             binding.addReportImageView.visibility = View.VISIBLE
         }
+        validateFields()
     }
 
     private val textWatcher = object : TextWatcher {
@@ -186,14 +193,15 @@ class ReportDialogFormFragment : DialogFragment(), ImagePickerHelper.ImagePicker
     private fun validateFields() {
         val titleText = titleTextInput.editText?.text.toString().trim()
         val reportBodyText = reportBodyTextInput.editText?.text.toString().trim()
+        val imageSelected = selectedImageUri != null || binding.addReportImageView.visibility == View.VISIBLE
 
-        val titleTextValidator = titleText.isNotEmpty()
-        val reportBodyTextValidator = reportBodyText.isNotEmpty()
+        val titleValid = titleText.isNotEmpty()
+        val bodyValid = reportBodyText.isNotEmpty()
 
-        updateTextInputLayoutBorder(titleTextInput, titleTextValidator)
-        updateTextInputLayoutBorder(reportBodyTextInput, reportBodyTextValidator)
+        updateTextInputLayoutBorder(titleTextInput, titleValid)
+        updateTextInputLayoutBorder(reportBodyTextInput, bodyValid)
 
-        if (titleTextValidator && reportBodyTextValidator) {
+        if (titleValid && bodyValid && imageSelected) {
             enableSaveButton()
         } else {
             disableSaveButton()
@@ -239,22 +247,20 @@ class ReportDialogFormFragment : DialogFragment(), ImagePickerHelper.ImagePicker
 
                 withContext(Dispatchers.Main) {
                     binding.addReportProgressBar.visibility = View.GONE
-                    Toast.makeText(context, "הדיווח נשמר בהצלחה", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "הפוסט נשמר בהצלחה", Toast.LENGTH_SHORT).show()
+                    onSuccessCallback?.invoke()
                     dismiss()
                 }
-                dismiss()
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     binding.addReportProgressBar.visibility = View.GONE
                     Toast.makeText(
                         context,
-                        "שגיאה בשמירת הדיווח : ${e.localizedMessage}",
+                        "שגיאה בשמירת הפוסט : ${e.localizedMessage}",
                         Toast.LENGTH_LONG
                     ).show()
                 }
             }
         }
-
-
     }
 }
