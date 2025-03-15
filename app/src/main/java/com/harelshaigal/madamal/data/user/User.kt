@@ -11,4 +11,7 @@ data class User(
     val fullName: String? = null,
     val email: String? = null,
     var imageUri: String? = null
-)
+) {
+
+ constructor() : this("", null, null, null)
+}

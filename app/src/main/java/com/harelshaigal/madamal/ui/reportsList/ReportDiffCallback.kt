@@ -2,13 +2,14 @@ package com.harelshaigal.madamal.ui.reportsList
 
 import androidx.recyclerview.widget.DiffUtil
 import com.harelshaigal.madamal.data.report.Report
+import com.harelshaigal.madamal.data.report.ReportWithUser
 
-class ReportDiffCallback : DiffUtil.ItemCallback<Report>() {
-    override fun areItemsTheSame(oldItem: Report, newItem: Report): Boolean =
+class ReportDiffCallback : DiffUtil.ItemCallback<ReportWithUser>() {
+    override fun areItemsTheSame(oldItem: ReportWithUser, newItem: ReportWithUser): Boolean =
         oldItem == newItem
 
 
-    override fun areContentsTheSame(oldItem: Report, newItem: Report): Boolean =
-        oldItem.id == newItem.id
+    override fun areContentsTheSame(oldItem: ReportWithUser, newItem: ReportWithUser): Boolean =
+        oldItem.report == newItem.report
 
 }

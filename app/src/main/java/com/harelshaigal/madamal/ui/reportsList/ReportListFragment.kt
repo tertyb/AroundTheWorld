@@ -34,11 +34,10 @@ class ReportListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        viewModel = ViewModelProvider(this)[ReportsListViewModel::class.java]
 
-        viewModel =
-            ViewModelProvider(this)[ReportsListViewModel::class.java]
-
-        reportAdapter = ReportListIAdapter(getParentFragmentManager())
+        val currentUserId = arguments?.getString(PARAM_KEY) ?: ""
+        reportAdapter = ReportListIAdapter(parentFragmentManager, currentUserId, viewModel, viewLifecycleOwner, currentUserId)
         _binding = FragmentReportsListBinding.inflate(inflater, container, false)
         val root: View = binding.root
         val recyclerView: RecyclerView = binding.reportList
@@ -56,18 +55,21 @@ class ReportListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getReportList(arguments?.getString(PARAM_KEY)).observe(viewLifecycleOwner) {
             if (it.isEmpty()) {
-                binding.reportList.visibility= View.GONE
-                binding.noReportText.visibility= View.VISIBLE
+                binding.reportList.visibility = View.GONE
+                binding.noReportText.visibility = View.VISIBLE
             } else {
-                binding.reportList.visibility= View.VISIBLE
-                binding.noReportText.visibility= View.GONE
+                binding.reportList.visibility = View.VISIBLE
+                binding.noReportText.visibility = View.GONE
             }
-
-            reportAdapter.submitList(it.toMutableList())
+            reportAdapter.submitList(it.sortedByDescending { report -> report.report.lastUpdated }.toMutableList())
         }
 
         binding.addReportButton.setOnClickListener {
-            ReportDialogFormFragment.display(getParentFragmentManager(), null)
+            ReportDialogFormFragment.display(parentFragmentManager, null) {
+                viewModel.getReportList(arguments?.getString(PARAM_KEY)).observe(viewLifecycleOwner) {
+                    reportAdapter.submitList(it.sortedByDescending { report -> report.report.lastUpdated }.toMutableList())
+                }
+            }
         }
     }
 }
