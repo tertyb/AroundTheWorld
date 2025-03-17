@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "616096393824",
-    "project_id": "aroundth-d7959",
-    "storage_bucket": "aroundth-d7959.firebasestorage.app"
+    "project_number": "665379948278",
+    "project_id": "aroundtw-d8aab",
+    "storage_bucket": "aroundtw-d8aab.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:616096393824:android:7d6b9893408bea359cb105",
+        "mobilesdk_app_id": "1:665379948278:android:1f9b03fb4dca89e5b14ed7",
         "android_client_info": {
           "package_name": "com.harelshaigal.aroundtw"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCXexACaJcTpBdaORIstLd3k49BQHHkv0M"
+          "current_key": "AIzaSyDjg30M-wRw9c3t0f01KfI2Q3KqWen2ZDA"
         }
       ],
       "services": {
