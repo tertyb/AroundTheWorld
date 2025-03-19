@@ -36,6 +36,9 @@
     <string name="noReportText">לא נמצאו פוסטים מתאימים</string>
     <string name="noWeather">שגיאה בקבלת מזג אוויר</string>
     <string name="currentWeather">מזג האוויר הוא</string>
+    <string name="enter_name"> הכנס שם חדש</string>
+    <string name="change_profile_picture">שנה תמונת פרופיל</string>
+    <string name="edit_profile">ערוך פרופיל</string>
     <string name="username">username</string>
 
 </resources>

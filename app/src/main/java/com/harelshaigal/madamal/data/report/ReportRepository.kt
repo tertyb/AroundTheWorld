@@ -27,6 +27,12 @@ class ReportRepository {
         return reportsWithUserLiveData
     }
 
+
+
+    fun getReportsByUserId(userId: String? = null): LiveData<List<Report>> {
+        return reportDao.getReportsByUserId(userId ?: "")
+        }
+
     private fun fetchReports(userId: String? = null) {
         reportsCollection.get().addOnSuccessListener { reportsSnapshot ->
             val reports = reportsSnapshot.documents.map { doc ->
