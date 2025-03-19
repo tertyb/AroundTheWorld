@@ -2,31 +2,76 @@ package com.harelshaigal.madamal.data.report
 
 import android.net.Uri
 import androidx.lifecycle.LiveData
-import com.google.firebase.firestore.DocumentChange
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.FirebaseFirestoreException
-import com.google.firebase.firestore.ListenerRegistration
-import com.google.firebase.firestore.QueryDocumentSnapshot
-import com.google.firebase.firestore.QuerySnapshot
+import androidx.lifecycle.MutableLiveData
+import com.google.firebase.firestore.*
 import com.harelshaigal.madamal.data.AppLocalDb
+import com.harelshaigal.madamal.data.user.User
 import com.harelshaigal.madamal.helpers.ImagePickerHelper
 import com.harelshaigal.madamal.helpers.Utils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 
-class ReportRepository() {
+class ReportRepository {
     private val reportsCollection = FirebaseFirestore.getInstance().collection("reports")
+    private val usersCollection = FirebaseFirestore.getInstance().collection("users")
     private val reportDao by lazy { AppLocalDb.db.reportDao()!! }
     private lateinit var reportsRegistration: ListenerRegistration
 
-    fun getAllReports(userId: String? = null): LiveData<List<Report>> {
-        return reportDao.getAllReports()
+    private val _reportsWithUserLiveData = MutableLiveData<List<ReportWithUser>>()
+    val reportsWithUserLiveData: LiveData<List<ReportWithUser>> get() = _reportsWithUserLiveData
+
+    fun getAllReports(userId: String? = null): LiveData<List<ReportWithUser>> {
+        fetchReports(userId)
+        return reportsWithUserLiveData
     }
+
+
 
     fun getReportsByUserId(userId: String? = null): LiveData<List<Report>> {
         return reportDao.getReportsByUserId(userId ?: "")
+        }
+
+    private fun fetchReports(userId: String? = null) {
+        reportsCollection.get().addOnSuccessListener { reportsSnapshot ->
+            val reports = reportsSnapshot.documents.map { doc ->
+                doc.toObject(Report::class.java)?.apply {
+                    id = doc.id
+                }
+            }
+            val reportsWithUser = mutableListOf<ReportWithUser>()
+
+            CoroutineScope(Dispatchers.IO).launch {
+                for (report in reports) {
+                    if (report?.userId != null) {
+                        val userSnapshot = usersCollection.document(report.userId).get().await()
+                        if (userSnapshot.exists()) {
+                            val user = userSnapshot.toObject(User::class.java)
+                            if (user != null) {
+                                reportsWithUser.add(
+                                    ReportWithUser(
+                                        report = report,
+                                        userName = user.fullName ?: "unknown user",
+                                        userImage = user.imageUri ?: ""
+                                    )
+                                )
+                            }
+                        }
+                    }
+                }
+                if (userId != null) {
+                    reportsWithUser.removeAll { it.report.userId != userId }
+                }
+                _reportsWithUserLiveData.postValue(reportsWithUser)
+            }
+        }
+    }
+
+    fun deleteReportById(id: String) {
+        reportsCollection.document(id).delete().addOnSuccessListener {
+            fetchReports() // Fetch updated reports after deletion
+        }
     }
 
     fun startReportsFetching() {
@@ -59,7 +104,13 @@ class ReportRepository() {
     }
 
     fun getReportById(id: String): LiveData<Report> {
-        return reportDao.getReportById(id)
+        val reportLiveData = MutableLiveData<Report>()
+        reportsCollection.document(id).get().addOnSuccessListener { documentSnapshot ->
+            val report = documentSnapshot.toObject(Report::class.java)
+            report?.id = documentSnapshot.id
+            reportLiveData.postValue(report!!)
+        }
+        return reportLiveData
     }
 
     private suspend fun uploadImage(selectedImageUri: Uri, reportId: String): String =
@@ -67,7 +118,6 @@ class ReportRepository() {
             selectedImageUri,
             Utils.getReportImageName(reportId)
         ).toString()
-
 
     suspend fun updateReport(reportDto: ReportDto, reportId: String, selectedImageUri: Uri?) {
         if (selectedImageUri !== null)
@@ -82,6 +132,4 @@ class ReportRepository() {
 
         newReportRef.set(reportDto.toMap())
     }
-
-    fun deleteReportById(id: String) = reportsCollection.document(id).delete()
 }

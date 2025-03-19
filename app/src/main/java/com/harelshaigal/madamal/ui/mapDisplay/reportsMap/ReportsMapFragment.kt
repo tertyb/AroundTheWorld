@@ -20,6 +20,7 @@ import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.*
 import com.harelshaigal.madamal.data.report.Report
+import com.harelshaigal.madamal.data.report.ReportWithUser
 import com.harelshaigal.madamal.databinding.FragmentReportsMapBinding
 import com.harelshaigal.madamal.helpers.LocationHelper
 import com.harelshaigal.madamal.ui.mapDisplay.reportMapDisplay.ReportMapDisplayFragment
@@ -90,6 +91,12 @@ class ReportsMapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerCli
         return degrees * Math.PI / 180
     }
 
+//    private fun observeReports() {
+//        viewModel.reportList.observe(viewLifecycleOwner) { reports ->
+//            updateMapMarkers(reports.map { it.report })
+//        }
+//    }
+
     fun haversineDistance(lon1: Double, lat1: Double, lon2: Double, lat2: Double): Double {
         val R = 6371000.0 // Earth radius in meters
         val φ1 = toRadians(lat1)
@@ -107,19 +114,19 @@ class ReportsMapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerCli
     }
 
 
-    private fun updateMapMarkers(reports: List<Report>,userLocation:LatLng) {
+    private fun updateMapMarkers(reports: List<ReportWithUser>, userLocation:LatLng) {
 //        googleMapRef?.clear()
         Log.d("ReportsMapFragment", "Updating map markers with ${reports.size} reports")
         for (report in reports) {
-            if (report.lat != null && report.lng != null) {
-                val reportMarker = LatLng(report.lat, report.lng)
-                val markerOptions = MarkerOptions().position(reportMarker).title(report.data)
+            if (report.report.lat != null && report.report.lng != null) {
+                val reportMarker = LatLng(report.report.lat, report.report.lng)
+                val markerOptions = MarkerOptions().position(reportMarker).title(report.report.data)
                 val distance = haversineDistance(
                     userLocation.longitude, userLocation.latitude,
-                    report.lng, report.lat
+                    report.report.lng, report.report.lat
                 )
                 if(distance <= 5000000) {
-                    googleMapRef?.addMarker(markerOptions)?.tag = report.id
+                    googleMapRef?.addMarker(markerOptions)?.tag = report.report.id
 
                 }
             }

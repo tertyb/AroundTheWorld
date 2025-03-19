@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navController)
         userRepository.startUserFetching(Firebase.auth.currentUser?.uid)
-        reportRepository.startReportsFetching()
+//        reportRepository.startReportsFetching()
 
         // Request location permission
         LocationHelper.requestLocationPermission(this)
