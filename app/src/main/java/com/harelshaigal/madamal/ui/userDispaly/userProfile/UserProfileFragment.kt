@@ -25,11 +25,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import android.content.Context
+import android.graphics.Color
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import androidx.recyclerview.widget.GridLayoutManager
+import com.harelshaigal.madamal.helpers.CircleTransform
 
 class UserProfileFragment : Fragment(), ImagePickerHelper.ImagePickerCallback {
     private lateinit var viewModel: UserProfileViewModel
@@ -38,6 +41,7 @@ class UserProfileFragment : Fragment(), ImagePickerHelper.ImagePickerCallback {
     private var _binding: FragmentUserProfileBinding? = null
     private val binding get() = _binding!!
     private val reportRepository: ReportRepository = ReportRepository()
+    private lateinit var adapter: UserPostsAdapter
 
 
 
@@ -59,6 +63,11 @@ class UserProfileFragment : Fragment(), ImagePickerHelper.ImagePickerCallback {
             imagePickerHelper.openImagePicker()
         }
 
+        binding.userPhotosRecyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
+        adapter = UserPostsAdapter(emptyList()) // Initially empty
+        binding.userPhotosRecyclerView.adapter = adapter
+
+
 
         binding.userProfileFullNameEdit.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_NEXT) {
@@ -79,14 +88,30 @@ class UserProfileFragment : Fragment(), ImagePickerHelper.ImagePickerCallback {
                 reportRepository.getReportsByUserId(user.uid).observe(viewLifecycleOwner, Observer { reports ->
                     val size = reports.size
                     binding.userProfilePostsCount.setText( size.toString() + " פוסטים")
+                    // Fetch user data
+
+                    viewModel.user.observe(viewLifecycleOwner) { user ->
+                        if (user != null) {
+                            reportRepository.getReportsByUserId(user.uid).observe(viewLifecycleOwner, Observer { reports ->
+                                val postImages = reports.mapNotNull { it.image } // Extract image URLs
+                                adapter.updatePosts(postImages) // Update adapter data
+                            })
+                        }
+                    }
+
                 })
 
             }
 
 
             binding.userProfileFullNameText.setText(user?.fullName ?: "")
+            binding.userProfileFullNameEdit.setText(binding.userProfileFullNameText.text)
             if (user?.imageUri != null) {
-                Picasso.get().load(user.imageUri).into(binding.userProfileProfileImageView)
+                Picasso.get()
+                    .load(user.imageUri)
+                    .transform(CircleTransform(borderWidth = 6, borderColor = Color.GRAY)) // Add a grey border with custom width
+                    .into(binding.userProfileProfileImageView)
+
                 binding.userProfileProfileImageView.visibility = View.VISIBLE
             }
         }
