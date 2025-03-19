@@ -85,15 +85,16 @@ class UserProfileFragment : Fragment(), ImagePickerHelper.ImagePickerCallback {
 
         viewModel.user.observe(viewLifecycleOwner) { user ->
             if (user != null) {
-                reportRepository.getReportsByUserId(user.uid).observe(viewLifecycleOwner, Observer { reports ->
+                reportRepository.getAllReports(user.uid).observe(viewLifecycleOwner, Observer { reports ->
                     val size = reports.size
+
                     binding.userProfilePostsCount.setText( size.toString() + " פוסטים")
                     // Fetch user data
 
                     viewModel.user.observe(viewLifecycleOwner) { user ->
                         if (user != null) {
-                            reportRepository.getReportsByUserId(user.uid).observe(viewLifecycleOwner, Observer { reports ->
-                                val postImages = reports.mapNotNull { it.image } // Extract image URLs
+                            reportRepository.getAllReports(user.uid).observe(viewLifecycleOwner, Observer { reports ->
+                                val postImages = reports.mapNotNull { it.report.image } // Extract image URLs
                                 adapter.updatePosts(postImages) // Update adapter data
                             })
                         }
