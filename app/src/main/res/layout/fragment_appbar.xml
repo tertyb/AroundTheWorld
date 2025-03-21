@@ -9,9 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:orientation="horizontal"
-        android:weightSum="2"
+        android:weightSum="3"
         android:paddingStart="20dp"
-        android:paddingEnd="20dp"
+
         android:background="#252f3e">
 
         <Button
@@ -31,6 +31,15 @@
             android:text="מסביב לעולם"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="25°C"
+            android:textSize="14sp"
             android:textColor="#FFFFFF" />
 
     </LinearLayout>
