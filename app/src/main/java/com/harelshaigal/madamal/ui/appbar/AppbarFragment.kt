@@ -38,19 +38,19 @@ class AppbarFragment : Fragment() {
             }
         }
 
-//        weatherViewModel.weatherData.observe(viewLifecycleOwner) { weather ->
-//            weather?.let {
-//                val currentTemperature =
-//                    weather.properties.timeseries[0].data.instant.details.air_temperature
-//                val weatherLabel = context?.getString(R.string.currentWeather)
-//                binding.weather.text = "$weatherLabel: ${currentTemperature}°C"
-//            } ?: run {
-//                binding.weather.text = context?.getString(R.string.noWeather)
-//            }
-//        }
+       weatherViewModel.weatherData.observe(viewLifecycleOwner) { weather ->
+           weather?.let {
+                val currentTemperature =
+                    weather.properties.timeseries[0].data.instant.details.air_temperature
+                val weatherLabel = context?.getString(R.string.currentWeather)
+                binding.temperature.text = "${currentTemperature}°C"
+           } ?: run {
+                binding.temperature.text = context?.getString(R.string.noWeather)
+            }
+        }
 
 
-//        weatherViewModel.fetchWeather()
+        weatherViewModel.fetchWeather()
     }
 
     private fun navigateToLogin() {
