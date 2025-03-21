@@ -18,13 +18,14 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.harelshaigal.aroundtw.R
 import com.harelshaigal.aroundtw.data.report.Report
 import com.harelshaigal.aroundtw.data.report.ReportDto
 import com.harelshaigal.aroundtw.data.report.ReportRepository
-import com.harelshaigal.aroundtw.databinding.FragmentReportDialogFormBinding
+
 import com.harelshaigal.aroundtw.helpers.ImagePickerHelper
 import com.harelshaigal.aroundtw.helpers.LocationHelper
+import com.harelshaigal.aroundtw.R
+import com.harelshaigal.aroundtw.databinding.FragmentReportDialogFormBinding
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
