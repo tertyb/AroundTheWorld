@@ -2,6 +2,7 @@ package com.harelshaigal.aroundtw.ui.reportsList
 
 import android.content.Context
 import android.net.Uri
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LifecycleOwner
@@ -62,8 +63,10 @@ class ReportViewHolder(
             binding.editReport.visibility = View.GONE
             binding.deleteReport.visibility = View.GONE
         }
+        Log.d("ReportViewHolder","reportWithUser.userImage: ${reportWithUser.userImage}")
 
-        if (reportWithUser.userImage != "null" && reportWithUser.userImage != null) {
+        if (reportWithUser.userImage != "null" && reportWithUser.userImage != "" && reportWithUser.userImage != null) {
+            Log.d("ReportViewHolder","got here")
             Picasso.get().load(Uri.parse(reportWithUser.userImage)).into(binding.profileImage)
             binding.profileImage.visibility = View.VISIBLE
         }
