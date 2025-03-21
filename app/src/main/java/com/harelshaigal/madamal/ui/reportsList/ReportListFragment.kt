@@ -54,6 +54,7 @@ class ReportListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getReportList(arguments?.getString(PARAM_KEY)).observe(viewLifecycleOwner) {
+            binding.loadingProgressBar.visibility = View.GONE
             if (it.isEmpty()) {
                 binding.reportList.visibility = View.GONE
                 binding.noReportText.visibility = View.VISIBLE
