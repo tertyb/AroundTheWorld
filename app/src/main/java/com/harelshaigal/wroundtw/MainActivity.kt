@@ -9,8 +9,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.harelshaigal.aroundtw.data.report.ReportRepository
 import com.harelshaigal.aroundtw.data.user.UserRepository
-import com.harelshaigal.aroundtw.databinding.ActivityMainBinding
 import com.harelshaigal.aroundtw.helpers.LocationHelper
+import com.harelshaigal.aroundtw.R
+import com.harelshaigal.aroundtw.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

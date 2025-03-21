@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.harelshaigal.aroundtw.R
-import com.harelshaigal.aroundtw.databinding.FragmentAppbarBinding
 import com.harelshaigal.aroundtw.ui.login.LoginActivity
 import com.harelshaigal.aroundtw.viewmodel.WeatherViewModel
+import com.harelshaigal.aroundtw.databinding.FragmentAppbarBinding
 
 class AppbarFragment : Fragment() {
     private var _binding: FragmentAppbarBinding? = null
