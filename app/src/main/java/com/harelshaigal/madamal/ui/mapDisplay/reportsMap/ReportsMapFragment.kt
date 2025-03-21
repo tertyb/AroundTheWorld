@@ -97,7 +97,7 @@ class ReportsMapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerCli
 //        }
 //    }
 
-    fun haversineDistance(lon1: Double, lat1: Double, lon2: Double, lat2: Double): Double {
+    private fun haversineDistance(lon1: Double, lat1: Double, lon2: Double, lat2: Double): Double {
         val R = 6371000.0 // Earth radius in meters
         val φ1 = toRadians(lat1)
         val φ2 = toRadians(lat2)
@@ -125,7 +125,9 @@ class ReportsMapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerCli
                     userLocation.longitude, userLocation.latitude,
                     report.report.lng, report.report.lat
                 )
-                if(distance <= 5000000) {
+                Log.d("ReportsMapFragment", "Distance: $distance meters")
+                if(distance <= 50000) {
+                    Log.d("ReportsMapFragment", "adding location at: $distance meters")
                     googleMapRef?.addMarker(markerOptions)?.tag = report.report.id
 
                 }
@@ -169,7 +171,7 @@ class ReportsMapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerCli
                 googleMapRef?.addCircle(
                     CircleOptions()
                         .center(userLatLng)
-                        .radius(5000.0) // 5 KM
+                        .radius(50000.0) // 5 KM
                         .strokeWidth(2f)
                         .strokeColor(0xFF0000FF.toInt()) // Blue Border
                         .fillColor(0x220000FF) // Light Transparent Blue Fill

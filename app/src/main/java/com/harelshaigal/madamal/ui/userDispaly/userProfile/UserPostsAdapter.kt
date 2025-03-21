@@ -23,9 +23,17 @@ class UserPostsAdapter(private var postImages: List<String>) :
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         val imageUrl = postImages[position]
-        Picasso.get().load(imageUrl)
-            .placeholder(R.drawable.placeholder) // Use a placeholder image
+
+        // Clear any previous image (prevents flickering)
+        holder.imageView.setImageDrawable(null)
+
+        Picasso.get()
+            .load(imageUrl)
+            .placeholder(R.drawable.placeholder)
+            .fit() // Adjust the image size to match the ImageView
+            .centerCrop()
             .into(holder.imageView)
+
     }
 
     override fun getItemCount() = postImages.size
