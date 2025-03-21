@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.ui.userReportsList
+package com.harelshaigal.aroundtw.ui.userReportsList
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
-import com.harelshaigal.madamal.databinding.FragmentUserReportsListBinding
-import com.harelshaigal.madamal.ui.reportsList.ReportListFragment
+import com.harelshaigal.aroundtw.databinding.FragmentUserReportsListBinding
+import com.harelshaigal.aroundtw.ui.reportsList.ReportListFragment
 
 class UserReportListFragment : Fragment() {
     private var _binding: FragmentUserReportsListBinding? = null

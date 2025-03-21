@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.data.report
+package com.harelshaigal.aroundtw.data.report
 
 data class ReportWithUser(
     val report: Report,

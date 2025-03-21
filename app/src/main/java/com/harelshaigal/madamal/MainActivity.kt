@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal
+package com.harelshaigal.aroundtw
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,10 +7,10 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.harelshaigal.madamal.data.report.ReportRepository
-import com.harelshaigal.madamal.data.user.UserRepository
-import com.harelshaigal.madamal.databinding.ActivityMainBinding
-import com.harelshaigal.madamal.helpers.LocationHelper
+import com.harelshaigal.aroundtw.data.report.ReportRepository
+import com.harelshaigal.aroundtw.data.user.UserRepository
+import com.harelshaigal.aroundtw.databinding.ActivityMainBinding
+import com.harelshaigal.aroundtw.helpers.LocationHelper
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

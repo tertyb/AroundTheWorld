@@ -1,7 +1,7 @@
-package com.harelshaigal.madamal.ui.reportDialogs.reportDialogForm
+package com.harelshaigal.aroundtw.ui.reportDialogs.reportDialogForm
 
 import androidx.lifecycle.ViewModel
-import com.harelshaigal.madamal.data.report.ReportRepository
+import com.harelshaigal.aroundtw.data.report.ReportRepository
 
 class ReportDialogFormViewModel : ViewModel() {
     private val repository: ReportRepository = ReportRepository()

@@ -130,7 +130,7 @@
                 android:padding="16dp">
                 <fragment
                     android:id="@+id/navigation_reports_map"
-                    android:name="com.harelshaigal.madamal.ui.mapDisplay.reportsMap.ReportsMapFragment"
+                    android:name="com.harelshaigal.aroundtw.ui.mapDisplay.reportsMap.ReportsMapFragment"
                     android:label="@string/title_reports_map"
                     tools:layout="@layout/fragment_reports_map"
                     android:layout_height="200dp"

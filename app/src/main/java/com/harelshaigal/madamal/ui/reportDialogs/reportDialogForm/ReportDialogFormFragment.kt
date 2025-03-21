@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.ui.reportDialogs.reportDialogForm
+package com.harelshaigal.aroundtw.ui.reportDialogs.reportDialogForm
 
 import android.graphics.Color
 import android.net.Uri
@@ -18,13 +18,13 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.harelshaigal.madamal.R
-import com.harelshaigal.madamal.data.report.Report
-import com.harelshaigal.madamal.data.report.ReportDto
-import com.harelshaigal.madamal.data.report.ReportRepository
-import com.harelshaigal.madamal.databinding.FragmentReportDialogFormBinding
-import com.harelshaigal.madamal.helpers.ImagePickerHelper
-import com.harelshaigal.madamal.helpers.LocationHelper
+import com.harelshaigal.aroundtw.R
+import com.harelshaigal.aroundtw.data.report.Report
+import com.harelshaigal.aroundtw.data.report.ReportDto
+import com.harelshaigal.aroundtw.data.report.ReportRepository
+import com.harelshaigal.aroundtw.databinding.FragmentReportDialogFormBinding
+import com.harelshaigal.aroundtw.helpers.ImagePickerHelper
+import com.harelshaigal.aroundtw.helpers.LocationHelper
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

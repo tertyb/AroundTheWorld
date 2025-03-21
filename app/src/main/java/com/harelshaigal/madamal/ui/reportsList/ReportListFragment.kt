@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.ui.reportsList
+package com.harelshaigal.aroundtw.ui.reportsList
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.harelshaigal.madamal.databinding.FragmentReportsListBinding
-import com.harelshaigal.madamal.ui.reportDialogs.reportDialogForm.ReportDialogFormFragment
+import com.harelshaigal.aroundtw.databinding.FragmentReportsListBinding
+import com.harelshaigal.aroundtw.ui.reportDialogs.reportDialogForm.ReportDialogFormFragment
 
 class ReportListFragment : Fragment() {
     companion object {

@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.ui.mapDisplay.reportsMap
+package com.harelshaigal.aroundtw.ui.mapDisplay.reportsMap
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -19,11 +19,11 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.*
-import com.harelshaigal.madamal.data.report.Report
-import com.harelshaigal.madamal.data.report.ReportWithUser
-import com.harelshaigal.madamal.databinding.FragmentReportsMapBinding
-import com.harelshaigal.madamal.helpers.LocationHelper
-import com.harelshaigal.madamal.ui.mapDisplay.reportMapDisplay.ReportMapDisplayFragment
+import com.harelshaigal.aroundtw.data.report.Report
+import com.harelshaigal.aroundtw.data.report.ReportWithUser
+import com.harelshaigal.aroundtw.databinding.FragmentReportsMapBinding
+import com.harelshaigal.aroundtw.helpers.LocationHelper
+import com.harelshaigal.aroundtw.ui.mapDisplay.reportMapDisplay.ReportMapDisplayFragment
 import kotlin.math.*
 
 class ReportsMapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {

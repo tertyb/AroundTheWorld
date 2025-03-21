@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.helpers
+package com.harelshaigal.aroundtw.helpers
 
 import android.Manifest
 import android.content.Context

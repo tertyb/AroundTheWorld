@@ -1,11 +1,11 @@
-package com.harelshaigal.madamal.ui.userDispaly.userProfile
+package com.harelshaigal.aroundtw.ui.userDispaly.userProfile
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.harelshaigal.madamal.R
+import com.harelshaigal.aroundtw.R
 import com.squareup.picasso.Picasso
 
 class UserPostsAdapter(private var postImages: List<String>) :

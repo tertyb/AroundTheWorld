@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.ui.appbar
+package com.harelshaigal.aroundtw.ui.appbar
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.harelshaigal.madamal.R
-import com.harelshaigal.madamal.databinding.FragmentAppbarBinding
-import com.harelshaigal.madamal.ui.login.LoginActivity
-import com.harelshaigal.madamal.viewmodel.WeatherViewModel
+import com.harelshaigal.aroundtw.R
+import com.harelshaigal.aroundtw.databinding.FragmentAppbarBinding
+import com.harelshaigal.aroundtw.ui.login.LoginActivity
+import com.harelshaigal.aroundtw.viewmodel.WeatherViewModel
 
 class AppbarFragment : Fragment() {
     private var _binding: FragmentAppbarBinding? = null

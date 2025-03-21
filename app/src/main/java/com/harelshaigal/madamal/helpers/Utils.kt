@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.helpers
+package com.harelshaigal.aroundtw.helpers
 
 import java.text.SimpleDateFormat
 import java.util.Locale

@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.ui.userDispaly.userProfile
+package com.harelshaigal.aroundtw.ui.userDispaly.userProfile
 
 import OperationStatus
 import android.annotation.SuppressLint
@@ -15,9 +15,9 @@ import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.harelshaigal.madamal.data.report.ReportRepository
-import com.harelshaigal.madamal.databinding.FragmentUserProfileBinding
-import com.harelshaigal.madamal.helpers.ImagePickerHelper
+import com.harelshaigal.aroundtw.data.report.ReportRepository
+import com.harelshaigal.aroundtw.databinding.FragmentUserProfileBinding
+import com.harelshaigal.aroundtw.helpers.ImagePickerHelper
 import com.squareup.picasso.Picasso
 import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
 import kotlinx.coroutines.CoroutineScope
@@ -32,7 +32,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.recyclerview.widget.GridLayoutManager
-import com.harelshaigal.madamal.helpers.CircleTransform
+import com.harelshaigal.aroundtw.helpers.CircleTransform
 
 class UserProfileFragment : Fragment(), ImagePickerHelper.ImagePickerCallback {
     private lateinit var viewModel: UserProfileViewModel

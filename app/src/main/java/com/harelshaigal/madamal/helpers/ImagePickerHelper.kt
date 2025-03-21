@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.helpers
+package com.harelshaigal.aroundtw.helpers
 
 import android.net.Uri
 import android.widget.ImageView

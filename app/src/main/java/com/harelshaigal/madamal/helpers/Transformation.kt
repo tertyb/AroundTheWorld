@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.helpers
+package com.harelshaigal.aroundtw.helpers
 
 import com.squareup.picasso.Transformation
 import android.graphics.Bitmap

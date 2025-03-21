@@ -1,9 +1,9 @@
-package com.harelshaigal.madamal.application
+package com.harelshaigal.aroundtw.application
 
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
-import com.harelshaigal.madamal.helpers.LocationHelper
+import com.harelshaigal.aroundtw.helpers.LocationHelper
 import com.google.firebase.FirebaseApp
 
 class AroundTwApplication : Application() {

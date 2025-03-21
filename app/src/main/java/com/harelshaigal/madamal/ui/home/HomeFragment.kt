@@ -1,11 +1,11 @@
-package com.harelshaigal.madamal.ui.home
+package com.harelshaigal.aroundtw.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.harelshaigal.madamal.databinding.FragmentHomeBinding
+import com.harelshaigal.aroundtw.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 

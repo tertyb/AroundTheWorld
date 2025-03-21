@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.data
+package com.harelshaigal.aroundtw.data
 
 data class WeatherData(val properties: WeatherProperties)
 data class WeatherProperties(val timeseries: List<WeatherTimeseries>)

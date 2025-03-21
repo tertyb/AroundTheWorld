@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.ui.mapDisplay.reportMapDisplay
+package com.harelshaigal.aroundtw.ui.mapDisplay.reportMapDisplay
 
 import android.net.Uri
 import android.os.Bundle
@@ -10,11 +10,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
-import com.harelshaigal.madamal.data.report.Report
-import com.harelshaigal.madamal.databinding.FragmentReportMapDisplayBinding
-import com.harelshaigal.madamal.helpers.Utils
-import com.harelshaigal.madamal.ui.reportDialogs.DeleteReportDialog
-import com.harelshaigal.madamal.ui.reportDialogs.reportDialogForm.ReportDialogFormFragment
+import com.harelshaigal.aroundtw.data.report.Report
+import com.harelshaigal.aroundtw.databinding.FragmentReportMapDisplayBinding
+import com.harelshaigal.aroundtw.helpers.Utils
+import com.harelshaigal.aroundtw.ui.reportDialogs.DeleteReportDialog
+import com.harelshaigal.aroundtw.ui.reportDialogs.reportDialogForm.ReportDialogFormFragment
 import com.squareup.picasso.Picasso
 
 class ReportMapDisplayFragment : BottomSheetDialogFragment() {

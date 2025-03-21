@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.harelshaigal.madamal"
+    namespace = "com.harelshaigal.aroundtw"
     compileSdk = 34
 
     defaultConfig {
