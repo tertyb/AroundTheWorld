@@ -71,7 +71,6 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/add_image_text"
-        app:backgroundTint="#1F7D53"
         app:layout_constraintBottom_toTopOf="@id/register_profileImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +96,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="#1F7D53"
         android:text="@string/register"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/register_signInLink"
@@ -112,7 +110,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="@string/for_sign_in_click_here"
-        android:textColor="@color/teal_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
