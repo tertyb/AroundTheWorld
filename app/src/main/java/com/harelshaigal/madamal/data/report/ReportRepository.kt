@@ -27,11 +27,9 @@ class ReportRepository {
         return reportsWithUserLiveData
     }
 
-
-
     fun getReportsByUserId(userId: String? = null): LiveData<List<Report>> {
         return reportDao.getReportsByUserId(userId ?: "")
-        }
+    }
 
     private fun fetchReports(userId: String? = null) {
         reportsCollection.get().addOnSuccessListener { reportsSnapshot ->
@@ -96,7 +94,11 @@ class ReportRepository {
             }
     }
 
-    fun endReportsFetching() = reportsRegistration.remove()
+    fun endReportsFetching() {
+        if (::reportsRegistration.isInitialized) {
+            reportsRegistration.remove()
+        }
+    }
 
     private fun convertQueryTOReport(document: QueryDocumentSnapshot): Report {
         val reportDto = document.toObject(ReportDto::class.java) // Fetching DTOs
