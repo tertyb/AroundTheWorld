@@ -1,12 +1,12 @@
-package com.harelshaigal.madamal.ui.reportsList
+package com.harelshaigal.aroundtw.ui.reportsList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.ListAdapter
-import com.harelshaigal.madamal.data.report.ReportWithUser
-import com.harelshaigal.madamal.databinding.FragmentReportListItemBinding
+import com.harelshaigal.aroundtw.data.report.ReportWithUser
+import com.harelshaigal.aroundtw.databinding.FragmentReportListItemBinding
 
 class ReportListIAdapter(
     private val fragmentManager: FragmentManager,

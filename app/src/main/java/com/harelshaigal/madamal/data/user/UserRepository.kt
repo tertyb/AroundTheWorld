@@ -1,11 +1,11 @@
-package com.harelshaigal.madamal.data.user
+package com.harelshaigal.aroundtw.data.user
 
 import androidx.lifecycle.LiveData
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.ListenerRegistration
-import com.harelshaigal.madamal.data.AppLocalDb
+import com.harelshaigal.aroundtw.data.AppLocalDb
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

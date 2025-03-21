@@ -1,8 +1,8 @@
-package com.harelshaigal.madamal.ui.reportDialogs
+package com.harelshaigal.aroundtw.ui.reportDialogs
 
 import android.content.Context
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.harelshaigal.madamal.data.report.ReportRepository
+import com.harelshaigal.aroundtw.data.report.ReportRepository
 
 object DeleteReportDialog {
     fun createDeleteDialog(context: Context, reportId: String, onDelete: () -> Unit) {

@@ -10,7 +10,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/app_bar"
-        android:name="com.harelshaigal.madamal.ui.appbar.AppbarFragment"
+        android:name="com.harelshaigal.aroundtw.ui.appbar.AppbarFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/nav_host_fragment_activity_main"

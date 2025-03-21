@@ -1,13 +1,13 @@
-package com.harelshaigal.madamal.data
+package com.harelshaigal.aroundtw.data
 
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.harelshaigal.madamal.application.AroundTwApplication
-import com.harelshaigal.madamal.data.report.Report
-import com.harelshaigal.madamal.data.report.ReportDao
-import com.harelshaigal.madamal.data.user.User
-import com.harelshaigal.madamal.data.user.UserDao
+import com.harelshaigal.aroundtw.application.AroundTwApplication
+import com.harelshaigal.aroundtw.data.report.Report
+import com.harelshaigal.aroundtw.data.report.ReportDao
+import com.harelshaigal.aroundtw.data.user.User
+import com.harelshaigal.aroundtw.data.user.UserDao
 
 
 @Database(entities = [Report::class, User::class], version = 5)

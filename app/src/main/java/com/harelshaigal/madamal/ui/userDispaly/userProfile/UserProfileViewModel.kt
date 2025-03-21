@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.ui.userDispaly.userProfile
+package com.harelshaigal.aroundtw.ui.userDispaly.userProfile
 
 import OperationStatus
 import android.net.Uri
@@ -7,10 +7,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.harelshaigal.madamal.data.user.User
-import com.harelshaigal.madamal.data.user.UserRepository
-import com.harelshaigal.madamal.helpers.ImagePickerHelper
-import com.harelshaigal.madamal.helpers.Utils
+import com.harelshaigal.aroundtw.data.user.User
+import com.harelshaigal.aroundtw.data.user.UserRepository
+import com.harelshaigal.aroundtw.helpers.ImagePickerHelper
+import com.harelshaigal.aroundtw.helpers.Utils
 
 class UserProfileViewModel : ViewModel() {
 

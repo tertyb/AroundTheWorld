@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.helpers
+package com.harelshaigal.aroundtw.helpers
 
 import android.content.Context
 import android.widget.Toast

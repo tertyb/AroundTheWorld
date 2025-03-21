@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.data.report
+package com.harelshaigal.aroundtw.data.report
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

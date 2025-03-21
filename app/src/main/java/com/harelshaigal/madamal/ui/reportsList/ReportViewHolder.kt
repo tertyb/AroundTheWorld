@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.ui.reportsList
+package com.harelshaigal.aroundtw.ui.reportsList
 
 import android.content.Context
 import android.net.Uri
@@ -8,11 +8,11 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
-import com.harelshaigal.madamal.data.report.ReportWithUser
-import com.harelshaigal.madamal.databinding.FragmentReportListItemBinding
-import com.harelshaigal.madamal.helpers.Utils
-import com.harelshaigal.madamal.ui.reportDialogs.DeleteReportDialog
-import com.harelshaigal.madamal.ui.reportDialogs.reportDialogForm.ReportDialogFormFragment
+import com.harelshaigal.aroundtw.data.report.ReportWithUser
+import com.harelshaigal.aroundtw.databinding.FragmentReportListItemBinding
+import com.harelshaigal.aroundtw.helpers.Utils
+import com.harelshaigal.aroundtw.ui.reportDialogs.DeleteReportDialog
+import com.harelshaigal.aroundtw.ui.reportDialogs.reportDialogForm.ReportDialogFormFragment
 import com.squareup.picasso.Picasso
 
 class ReportViewHolder(

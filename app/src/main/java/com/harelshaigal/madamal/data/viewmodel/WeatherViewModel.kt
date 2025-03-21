@@ -1,11 +1,11 @@
-package com.harelshaigal.madamal.viewmodel
+package com.harelshaigal.aroundtw.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
-import com.harelshaigal.madamal.data.WeatherData
+import com.harelshaigal.aroundtw.data.WeatherData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

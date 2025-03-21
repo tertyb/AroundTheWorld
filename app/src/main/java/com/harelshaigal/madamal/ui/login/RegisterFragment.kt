@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.ui.login
+package com.harelshaigal.aroundtw.ui.login
 
 import android.content.Intent
 import android.net.Uri
@@ -10,13 +10,13 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.harelshaigal.madamal.MainActivity
-import com.harelshaigal.madamal.data.user.User
-import com.harelshaigal.madamal.data.user.UserRepository
-import com.harelshaigal.madamal.databinding.FragmentRegisterBinding
-import com.harelshaigal.madamal.helpers.ImagePickerHelper
-import com.harelshaigal.madamal.helpers.ToastHelper
-import com.harelshaigal.madamal.helpers.Utils
+import com.harelshaigal.aroundtw.MainActivity
+import com.harelshaigal.aroundtw.data.user.User
+import com.harelshaigal.aroundtw.data.user.UserRepository
+import com.harelshaigal.aroundtw.databinding.FragmentRegisterBinding
+import com.harelshaigal.aroundtw.helpers.ImagePickerHelper
+import com.harelshaigal.aroundtw.helpers.ToastHelper
+import com.harelshaigal.aroundtw.helpers.Utils
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

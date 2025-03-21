@@ -1,4 +1,4 @@
-package com.harelshaigal.madamal.data.user
+package com.harelshaigal.aroundtw.data.user
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
